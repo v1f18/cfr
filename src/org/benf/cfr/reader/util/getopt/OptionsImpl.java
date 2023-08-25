@@ -451,6 +451,10 @@ public class OptionsImpl implements Options {
     public static final PermittedOptionProvider.Argument<String> OUTPUT_DIR = register(new PermittedOptionProvider.Argument<String>(
             "outputdir", defaultNullStringDecoder,
             "Decompile to files in [directory] (= options 'outputpath' + 'clobber') (historic compatibility)"));
+    public static final PermittedOptionProvider.Argument<Boolean> IS_Summary = register(new PermittedOptionProvider.Argument<Boolean>(
+            "is",defaultFalseBooleanDecoder,
+            "Whether to write the Summary file"
+    ));
     public static final PermittedOptionProvider.Argument<String> OUTPUT_PATH = register(new PermittedOptionProvider.Argument<String>(
             "outputpath", defaultNullStringDecoder,
             "Decompile to files in [directory]"));

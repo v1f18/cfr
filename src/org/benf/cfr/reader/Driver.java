@@ -120,9 +120,11 @@ class Driver {
         SummaryDumper summaryDumper = null;
         try {
             ProgressDumper progressDumper = dumperFactory.getProgressDumper();
+            if (options.getOption(OptionsImpl.IS_Summary)){
             summaryDumper = dumperFactory.getSummaryDumper();
             summaryDumper.notify("Summary for " + path);
             summaryDumper.notify(MiscConstants.CFR_HEADER_BRA + " " + CfrVersionInfo.VERSION_INFO);
+            }
             progressDumper.analysingPath(path);
             Map<Integer, List<JavaTypeInstance>> clstypes = dcCommonState.explicitlyLoadJar(path, analysisType);
             Set<JavaTypeInstance> versionCollisions = getVersionCollisions(clstypes);

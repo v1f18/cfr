@@ -28,6 +28,7 @@ public class FileSummaryDumper implements SummaryDumper {
             if (!parent.exists() && !parent.mkdirs()) {
                 throw new IllegalStateException("Couldn't create dir: " + parent);
             }
+
             writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(file)));
         } catch (FileNotFoundException e) {
             throw new Dumper.CannotCreate(e);
